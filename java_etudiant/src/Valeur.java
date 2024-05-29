@@ -85,7 +85,21 @@ public class Valeur {
             res += s + " ->  V:" + valeurNoeud + " p:" + noeudParent + "\n";
         }
         return res;
-
     }
 
+    /**
+     * calcule le chemin jusqu'à destination
+     * @param destination noeud à atteindre
+     * @return list<String>
+     */
+    public List<String> calculerChemin(String destination){
+        List<String> chemin = new ArrayList<>();
+        chemin.add(0, destination);
+        String ind = destination;
+        while(ind != null){
+            chemin.add(0, ind);
+            ind = parent.get(ind);
+        }
+        return chemin;
+    }
 }

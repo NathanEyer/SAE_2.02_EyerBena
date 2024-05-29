@@ -46,11 +46,10 @@ public class GrapheListe implements Graphe{
 
     /**
      * retourne tous les arcs successeurs à n
-     * @param g graphe étudié
      * @param n noeud recherché
      * @return List<Arc>
      */
-    public List<Arc> suivants(Graphe g, String n){
+    public List<Arc> suivants(String n){
         //Recherche de l'indice de n
             int ind = this.getIndice(n);
 
@@ -98,37 +97,4 @@ public class GrapheListe implements Graphe{
         return graphe;
     }
 
-    /**
-     * Main de la classe
-     * @param args
-     */
-    public static void main(String[] args) {
-        //Création des listes vides
-            ArrayList<String> lNoeuds = new ArrayList<>();
-            ArrayList<Arcs> lArc = new ArrayList<>();
-
-        //Création de tableaux de String des noeuds
-            String[] noeudTab = {"A", "B", "C", "D", "E"};
-            String[][] arcsTab = {
-                    {"A", "B", "12"}, {"A", "D", "87"},
-                    {"B", "E", "11"}, {"C", "A", "19"},
-                    {"D", "C", "10"}, {"D", "B", "23"},
-                    {"E", "D", "43"}
-            };
-
-        //Remplissage de la liste de noeuds
-            for(String c : noeudTab){
-                lNoeuds.add(c);
-            }
-
-        //Création d'un objet GrapheListe
-            GrapheListe gr = new GrapheListe(lNoeuds, lArc);
-
-        // Ajout des arcs dans le graphe
-            for (String[] arc : arcsTab) {
-                gr.ajouterArc(arc[0], arc[1], Double.parseDouble(arc[2]));
-            }
-
-        System.out.println(gr.toString());
-    }
 }

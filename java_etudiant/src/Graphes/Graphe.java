@@ -15,7 +15,7 @@ public interface Graphe{
      * @param n noeud
      * @return la liste des arcs partant de n
      */
-    public List<Arc> suivants(Graphe g, String n);
+    public List<Arc> suivants(String n);
 
 
 }
