@@ -1,11 +1,10 @@
-package Graphes;
-
+package Tests;
+import Graphes.Arc;
+import Graphes.Arcs;
+import Graphes.GrapheListe;
 import org.junit.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class TestGrapheListe {
 

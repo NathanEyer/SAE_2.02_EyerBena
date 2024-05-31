@@ -1,3 +1,5 @@
+package Main;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
@@ -93,13 +95,18 @@ public class Valeur {
      * @return list<String>
      */
     public List<String> calculerChemin(String destination){
-        List<String> chemin = new ArrayList<>();
-        chemin.add(0, destination);
-        String ind = destination;
-        while(ind != null){
-            chemin.add(0, ind);
-            ind = parent.get(ind);
-        }
+        //Création d'une liste vide pour le futur chemin
+            List<String> chemin = new ArrayList<>();
+
+        //Ajout de la destination
+            chemin.add(destination);
+
+        //Ajout de chaque parent
+            String noeud = destination;
+            while(noeud != null){
+                chemin.addFirst(noeud);
+                noeud = parent.get(noeud);
+            }
         return chemin;
     }
 }

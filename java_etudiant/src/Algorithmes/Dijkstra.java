@@ -1,10 +1,15 @@
+package Algorithmes;
+
 import Graphes.Arc;
 import Graphes.Graphe;
-
+import Main.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dijkstra {
+/**
+ * Classe Algorithmes.BellFord qui permet la résolution par la méthode Dijkstra sur un graphe orienté
+ */
+public class Dijkstra implements Algorithme {
 
     // Entrées :
     // G un graphe orienté avec une pondération positive des arcs (coût ou poids)

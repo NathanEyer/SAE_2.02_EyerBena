@@ -3,7 +3,7 @@ package Graphes;
 import java.util.List;
 
 /**
- * Classe Graphes.Graphe fondé sur le TAD graphe
+ * Interface Graphes.Graphe fondé sur le TAD graphe
  */
 public interface Graphe{
     /**
@@ -16,6 +16,4 @@ public interface Graphe{
      * @return la liste des arcs partant de n
      */
     public List<Arc> suivants(String n);
-
-
 }

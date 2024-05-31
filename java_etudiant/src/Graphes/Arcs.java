@@ -5,11 +5,14 @@ import java.util.List;
 
 /**
  * Classe Graphes.Arcs qui génère une liste définissant un ensemble
- * d'arcs partant d'un noeud sous la forme d'un objet de type Graphes.Arcs
+ * d'arcs partant d'un noeud sous la forme d'un objet de type Arcs
  */
 public class Arcs{
 
-    private List<Arc> arcs; //liste d'arcs à gérer
+    /**
+     * Liste d'arc à gérer
+     */
+    private List<Arc> arcs;
 
     /**
      * Construit une liste d'arcs vide.
@@ -34,6 +37,9 @@ public class Arcs{
         return this.arcs;
     }
 
+    /**
+     * @return une chaîne de caractères correspondant aux caractéristiques de chaque arc
+     */
     public String toString(){
         String arc = "";
         for(Arc a : arcs){
@@ -41,5 +47,4 @@ public class Arcs{
         }
         return arc;
     }
-
 }

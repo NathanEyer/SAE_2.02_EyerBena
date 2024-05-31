@@ -6,23 +6,33 @@ import java.util.Objects;
  * Classe Graphes.Arc qui représente un arc portant un noeud
  */
 public class Arc{
-    private String dest; //nom du nœud destination de l’arc
-    private double cout; //cout ou poids de l’arc
+    /**
+     * Nom du noeud de destination de l'arc
+     */
+    private String dest;
+
+    /**
+     * Cout de l'arc
+     */
+    private double cout;
 
     /**
      * Constructeur de la classe
-     * @param dest noeud de destination
+     * @param dest nom du noeud de destination
      * @param cout cout de l'arc créé
      */
     public Arc(String dest, double cout) {
         this.dest = dest;
-        this.cout = cout;
+        if(cout > 0){
+            this.cout = cout;
+        }else this.cout = cout*-1;
+
     }
 
     /**
      * Redéfinit pour ne pas avoir d'erreur de test
      * @param o objet
-     * @return true si égal
+     * @return true si les deux objets comparé son égaux
      */
     public boolean equals(Object o) {
         if (this == o) {
@@ -35,8 +45,12 @@ public class Arc{
         return Double.compare(arc.cout, cout) == 0 && Objects.equals(dest, arc.dest);
     }
 
+    /**
+     *
+     * @return une chaîne de caractères qui représente les caractéristiques de l'arc
+     */
     public String toString(){
-        return dest + "(" + cout + ")";
+        return String.format("%s(%.0f)", this.dest, this.cout);
     }
 
     public String getDest() {

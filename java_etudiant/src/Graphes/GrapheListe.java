@@ -3,11 +3,18 @@ package Graphes;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe Graphes.GrapheListe permettant de construire un graphe orienté composé de noeuds et d'arcs
+ */
 public class GrapheListe implements Graphe{
-    //liste des noeuds du graphe
+    /**
+     * Liste de String pour les noeuds
+     */
     private ArrayList<String> noeuds;
 
-    //liste des Graphes.Arcs partant de chaque noeud du graphe
+    /**
+     * Liste des Arcs partant de chaque noeud du graphe
+     */
     private ArrayList<Arcs> adjacence;
 
     /**
@@ -91,8 +98,12 @@ public class GrapheListe implements Graphe{
      */
     public String toString(){
         String graphe = "";
-        for(int i=0;i<noeuds.size();i++){
-            graphe += noeuds.get(i) + " -> " + adjacence.get(i).toString() + "\n";
+        try{
+            for(int i=0;i<noeuds.size();i++){
+                graphe += noeuds.get(i) + " -> " + adjacence.get(i) + "\n";
+            }
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("Ajout d'un nouveau noeud: \n" + listeNoeuds() + "\n");
         }
         return graphe;
     }
