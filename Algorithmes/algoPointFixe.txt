@@ -1,0 +1,47 @@
+Fonction pointFixe(graphe g, Noeud départ)
+    Pour chaque nœud dans le graphe faire
+	N.valeur ← +∞
+        N.parent ← null
+    Fin Pour
+    départ.valeur ← 0.0
+    modif ← vrai
+
+    Tant que modif est vrai faire
+        modif ← faux
+
+        Pour chaque nœud dans le graphe faire
+		Pour chaque noeud Y à X parent faire
+                	val ← val(X) + coût de l'arc entre X et Y
+                	Si val < val(Y) alors
+                    		val(Y) ← val
+                    		Parent de Y ← X
+                    		modif ← vrai
+                	Fin Si
+           		Si val < minimum alors
+                    		minimum ← val
+                    		parent ← Y
+                	Fin Si
+                Fin Pour
+
+        	val ← min
+        	X.parent ← parent
+        Fin Pour
+    Fin Tant que
+
+    Retourner minimum
+Fin
+
+
+LEXIQUE
+
+Graphe orienté (g) : (GrapheListe) représente un ensemble de noeuds connectés par des arcs orientés, où chaque arc a  un cout associé.
+
+Départ (départ) : (Noeud) départ à partir duquel on souhaite trouver le chemin le plus court
+
+Valeur (valeur) : Valeur associée à chaque nœud dans la fonction,  représentant la cout le plus petit trouvé jusqu'à ce noeud.
+
+parent (parent) : (Noeud) parent associé à chaque noeud dans la fonction, représentant le noeud précédent sur le chemin le plus court pour atteindre ce même noeud.
+
+Min (minimum) : (int) Valeur minimale utilisée pour trouver la valeur minimale parmi les valeurs des noeuds.
+
+Parent (parent) : (Noeud)  Noeud parent temporaire utilisé pour stocker le noeud associé à la valeur minimale pendant la recherche du minimum.
