@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"Algorithmes"},{"l":"All Packages","u":"allpackages-index.html"},{"l":"Comparaison"},{"l":"Graphes"},{"l":"Main"},{"l":"Tests"}];updateSearchResults();
