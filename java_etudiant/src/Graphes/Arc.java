@@ -3,7 +3,7 @@ package Graphes;
 import java.util.Objects;
 
 /**
- * Classe Graphes.Arc qui représente un arc portant un noeud
+ * Classe Arc qui représente un arc portant un noeud
  */
 public class Arc{
     /**
@@ -25,14 +25,15 @@ public class Arc{
         this.dest = dest;
         if(cout > 0){
             this.cout = cout;
+            // si le coût est négatif, celui-ci est rendu à sa valeur absolue
         }else this.cout = cout*-1;
 
     }
 
     /**
-     * Redéfinit pour ne pas avoir d'erreur de test
+     * Redéfini pour ne pas avoir d'erreur de test
      * @param o objet
-     * @return true si les deux objets comparé son égaux
+     * @return true si les deux objets comparés sont égaux
      */
     public boolean equals(Object o) {
         if (this == o) {
@@ -46,17 +47,26 @@ public class Arc{
     }
 
     /**
-     *
-     * @return une chaîne de caractères qui représente les caractéristiques de l'arc
+     * Affiche de manière fluide un Arc
+     * @return une chaîne de caractères qui représente
+     * les caractéristiques de l'arc
      */
     public String toString(){
         return String.format("%s(%.0f)", this.dest, this.cout);
     }
 
+    /**
+     * Getter du noeud de destination
+     * @return dest
+     */
     public String getDest() {
         return dest;
     }
 
+    /**
+     * Getter du cout de l'arc
+     * @return cout
+     */
     public double getCout() {
         return cout;
     }

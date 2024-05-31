@@ -98,14 +98,11 @@ public class Valeur {
         //Création d'une liste vide pour le futur chemin
             List<String> chemin = new ArrayList<>();
 
-        //Ajout de la destination
-            chemin.add(destination);
-
         //Ajout de chaque parent
             String noeud = destination;
             while(noeud != null){
                 chemin.addFirst(noeud);
-                noeud = parent.get(noeud);
+                noeud = this.getParent(noeud);
             }
         return chemin;
     }

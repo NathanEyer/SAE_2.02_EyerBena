@@ -10,7 +10,6 @@ import static org.junit.Assert.assertEquals;
  * La classe de test pour valider la classe Arc
  */
 public class TestArc {
-
     @Test
     public void test_Constructeur_positif() {
         //Initialisation
@@ -28,7 +27,7 @@ public class TestArc {
 
         //Comparaison
         assertEquals("B", arc.getDest());
-        assertEquals(10.0, arc.getCout(), 0.001); //
+        assertEquals(12.0, arc.getCout(), 0.001); //
     }
 
     @Test

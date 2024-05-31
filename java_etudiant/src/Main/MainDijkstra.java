@@ -1,14 +1,20 @@
 package Main;
-
 import Algorithmes.Algorithme;
 import Algorithmes.BellmanFord;
 import Algorithmes.Dijkstra;
 import Graphes.Arcs;
 import Graphes.GrapheListe;
-
 import java.util.ArrayList;
 
+/**
+ * Classe principale de création d'un graphe
+ * et d'utilisation de la méthode Dijkstra
+ */
 public class MainDijkstra {
+    /**
+     * Main de la classe
+     * @param args
+     */
     public static void main(String[] args) {
         //Création des listes vides
             ArrayList<String> lNoeuds = new ArrayList<>();
@@ -39,7 +45,12 @@ public class MainDijkstra {
         //Affichage
             System.out.println("Liste des noeuds suivis de leur successeurs: \n" + gr);
 
+        //Résolution par Dijkstra
             Algorithme dijkstra = new Dijkstra();
-            System.out.println("Méthode Dijkstra: \n" + dijkstra.resoudre(gr, "A"));
+            Valeur resDijkstra = dijkstra.resoudre(gr, "A");
+            System.out.println("Méthode Dijkstra: \n" + resDijkstra);
+
+        //Affichage du chemin
+            System.out.println(resDijkstra.calculerChemin("D"));
     }
 }

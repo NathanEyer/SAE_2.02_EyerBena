@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe Graphes.GrapheListe permettant de construire un graphe orienté composé de noeuds et d'arcs
+ * Classe GrapheListe permettant de construire
+ * un graphe orienté composé de noeuds et d'arcs
  */
 public class GrapheListe implements Graphe{
     /**
@@ -18,9 +19,9 @@ public class GrapheListe implements Graphe{
     private ArrayList<Arcs> adjacence;
 
     /**
-     * crée un objet grapheListe
+     * Crée un objet grapheListe
      * @param noeuds liste noeuds du graphe
-     * @param adjacence liste noeud adjacent à chaque noeud du graphe
+     * @param adjacence liste noeuds adjacent à chaque noeud du graphe
      */
     public GrapheListe(ArrayList<String> noeuds, ArrayList<Arcs> adjacence) {
         //Initialisation des attributs
@@ -35,7 +36,7 @@ public class GrapheListe implements Graphe{
     }
 
     /**
-     * retourne l'indice de n dans noeuds
+     * Retourne l'indice de n dans noeuds
      * @param n noeud recherché
      * @return indice n
      */
@@ -77,12 +78,14 @@ public class GrapheListe implements Graphe{
             if(dep == -1){
                 noeuds.add(depart);
                 dep = this.getIndice(depart);
+                adjacence.add(new Arcs());
             }
 
         //vérification de l'existence du noeud de destination
             int dest = this.getIndice(destination);
             if(dest == -1){
                 noeuds.add(destination);
+                adjacence.add(new Arcs());
             }
 
         //Création de l'objet Arcs à ajouter
@@ -93,7 +96,7 @@ public class GrapheListe implements Graphe{
     }
 
     /**
-     * affichage concis du grapheListe
+     * Affichage concis du grapheListe
      * @return affichage
      */
     public String toString(){

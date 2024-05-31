@@ -62,5 +62,7 @@ public class TestBellmanFord {
             assertEquals("D", resultat.getParent("C"));
             assertEquals("E", resultat.getParent("D"));
             assertEquals("B", resultat.getParent("E"));
+
+
     }
 }

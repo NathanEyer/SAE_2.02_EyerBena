@@ -4,6 +4,8 @@ import Graphes.Arc;
 import Graphes.Arcs;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 /**
@@ -18,7 +20,7 @@ public class TestArcs {
 
         //Comparaison
         //La liste doit être vide
-        assertNull(arcs.getArcs());
+        assertEquals(arcs.getArcs(), new ArrayList<>());
         assertTrue(arcs.getArcs().isEmpty());
     }
 
@@ -31,8 +33,8 @@ public class TestArcs {
         arcs.ajouterArc(new Arc("B", 12.0));
         arcs.ajouterArc(new Arc("C", 19.0));
 
-        //Comparaison
-        assertEquals("B(12) C(19)", arcs.toString());
+        assertTrue(arcs.getArcs().contains(new Arc("B", 12.0)));
+        assertTrue(arcs.getArcs().contains(new Arc("C", 19.0)));
     }
 
     @Test

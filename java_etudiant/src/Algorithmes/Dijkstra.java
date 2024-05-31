@@ -1,5 +1,4 @@
 package Algorithmes;
-
 import Graphes.Arc;
 import Graphes.Graphe;
 import Main.*;
@@ -7,10 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe Algorithmes.BellFord qui permet la résolution par la méthode Dijkstra sur un graphe orienté
+ * Algorithme Dijkstra qui permet de chercher
+ * le chemin le plus court sur un graphe orienté
  */
 public class Dijkstra implements Algorithme {
 
+    //Algorithmes Dijkstra en pseudo-code
     // Entrées :
     // G un graphe orienté avec une pondération positive des arcs (coût ou poids)
     // A un sommet (départ) de G
@@ -37,7 +38,7 @@ public class Dijkstra implements Algorithme {
     // Fin Tant que
 
     /**
-     * Algorithme de Dijska
+     * Algorithme de Dijkstra
      * @param g Graphe étudié
      * @param depart noeud de départ
      * @return val
@@ -80,13 +81,14 @@ public class Dijkstra implements Algorithme {
                 lNoeuds.remove(noeud);
 
             //Boucle tous les Arc
-            for(Arc arc : g.suivants(noeud)){
+            List<Arc> suivant = g.suivants(noeud);
+            for(Arc arc : suivant){
                 String dest = arc.getDest();
 
                 //Vérification que v est dans la liste
                 if(lNoeuds.contains(dest)){
                     //Calcul de la distance
-                    double d = val.getValeur(noeud) + arc.getCout();
+                        double d = val.getValeur(noeud) + arc.getCout();
 
                     //Si la distance calculée < distance actuelle du sommet v,
                     if(d < val.getValeur(dest)){

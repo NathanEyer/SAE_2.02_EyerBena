@@ -1,10 +1,13 @@
 package Main;
-
 import Graphes.Arcs;
 import Graphes.GrapheListe;
 import Algorithmes.*;
 import java.util.ArrayList;
 
+/**
+ * Classe principale de création d'un graphe
+ * et d'utilisation de la méthode BellmanFord
+ */
 public class Main {
     /**
      * Main de la classe
@@ -38,12 +41,14 @@ public class Main {
             }
 
         //Affichage
-        System.out.println("Liste des noeuds suivis de leur successeurs: \n" + gr);
+            System.out.println("Liste des noeuds suivis de leur successeurs: \n" + gr);
 
-        Algorithme pointFixe = new BellmanFord();
-        System.out.println("Méthode BellmanFord: \n" + pointFixe.resoudre(gr, "A"));
+        //Résolution du point fixe
+            Algorithme pointFixe = new BellmanFord();
+            Valeur resPointFixe = pointFixe.resoudre(gr, "A");
+            System.out.println("Méthode BellmanFord: \n" + resPointFixe);
 
-        Valeur valeur = new Valeur();
-        System.out.println(valeur.calculerChemin("D"));
+        //Affichage du chemin
+            System.out.println(resPointFixe.calculerChemin("D"));
     }
 }
